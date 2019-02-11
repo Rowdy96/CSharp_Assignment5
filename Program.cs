@@ -15,18 +15,18 @@ namespace Project5
             Primeministers.Add("2014", "Narendra Modi");
             Primeministers.Add("2004", "Manmohan Singh");
            
-            var find = from minister in Primeministers where minister.Key.Contains("2004") select minister;
+            var find = from minister in Primeministers where minister.Key.Contains("2004") select minister.Value;
             Console.Write("the Prime minister of 2004: ");
             foreach (var o in find)
             {
-                Console.WriteLine(o.Value);
+                Console.WriteLine(o);
             }
             Primeministers.Add("2019", "Narendra Modi");
             Console.WriteLine();
             Console.WriteLine("After adding current Prime minister:");
             foreach (var ministers in Primeministers)
             {
-                Console.WriteLine(ministers.Value);
+                Console.WriteLine(ministers);
             }
             Console.WriteLine();
             var SortList = from minister in Primeministers orderby minister.Key select minister;
